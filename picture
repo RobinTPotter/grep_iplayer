@@ -1,0 +1,9 @@
+# get picture from url and id
+
+pid=$(echo $1 | awk -F/ '{print $6}')
+
+#echo url: $1
+#echo pid: $pid
+
+curl "$1" -ks | grep "{\"episode\":{\"id\":\"$pid" | grep -Eo "/[0-9a-z]+\.jpg" | uniq | sed 's/^/https:\/\/ichef\.bbci\.co\.uk\/images\/ic\/304x171/'
+

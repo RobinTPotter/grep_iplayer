@@ -1,0 +1,7 @@
+
+curl -ks https://www.bbc.co.uk/iplayer \
+	| grep -Eo \"href\":\"\[^\"\]+\" \
+	| sed 's/\"href\":\"/https:\/\/www\.bbc\.co\.uk/' \
+	| sed 's/\"$//' \
+	| sort -t/ -k7 \
+	| uniq

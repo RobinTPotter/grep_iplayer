@@ -1,0 +1,3 @@
+# description from page url
+
+curl -ks $1 | grep -Eo \"metadata\":{\"title\":\"[^\"]*\",\"description\":\"[^\"]*\" | grep -Eo \"description\":\"[^\"]*\" | sed 's/\"description\"://' | sed 's/\"//g'
