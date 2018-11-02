@@ -1,5 +1,11 @@
+if [ "a$1" == "a" ]
+then
+	url=https://www.bbc.co.uk/iplayer
+else
+	url=$1
+fi
 
-curl -ks https://www.bbc.co.uk/iplayer \
+curl -ks $url \
 	| grep -Eo \"href\":\"\[^\"\]+\" \
 	| sed 's/\"href\":\"/https:\/\/www\.bbc\.co\.uk/' \
 	| sed 's/\"$//' \

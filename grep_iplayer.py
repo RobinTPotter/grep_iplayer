@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import pygame as pg
 import os
 
@@ -12,8 +14,8 @@ pg.init()
 pg.font.init()
 font = pg.font.SysFont(None, 12)
 size_screen = [640,480]
-#pg.display.set_mode(size_screen, pg.FULLSCREEN)
-pg.display.set_mode(size_screen)
+pg.display.set_mode(size_screen, pg.FULLSCREEN)
+#pg.display.set_mode(size_screen)
 squares = [4,4]
 size_small = (int(size_screen[0]/squares[0]),int(size_screen[1]/squares[1]))
 print (size_screen)

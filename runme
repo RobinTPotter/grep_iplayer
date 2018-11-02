@@ -1,8 +1,17 @@
+if [ ! -e cache ]
+then
+	mkdir cache
+fi
+
 ./main > cache/main
 cp cache/main cache/main_$(date +%s)
+
+echo "" > cache/descr
+
 for f in $(cat cache/main)
 do
 	echo $f
 	pid=$(echo $f | awk -F/ '{ print $6}')
 	wget -O cache/images/${pid}.jpg $( ./picture "$f" | head -n1)
+	echo $pid "|" $( ./description "$f" ) >> cache/descr
 done
