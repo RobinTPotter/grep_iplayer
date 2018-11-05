@@ -1,7 +1,7 @@
 # grep_iplayer
 
 This started out as some functions to grep from iplayer pages.
-Uses curl and wget (might want to turn on certificate checks for a laugh)
+Uses ```curl``` and ```wget``` (might want to turn on certificate checks for a laugh)
 
 - ```main``` greps a bunch of href from some object in
 the main page or a page it is given as $1
